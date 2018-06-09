@@ -30,8 +30,8 @@ router.get('/movieDetail', function(req, res) {
 });
 
 router.get('/movieList', function(req, res) {
-  var pageNum = req.query.pageNum
-	var pageSize = parseInt(req.query.pageSize)
+    var pageNum = req.query.pageNum || 1
+	var pageSize = parseInt(req.query.pageSize) || 10
   Movie.paginate({
     },{page: pageNum, limit: pageSize}, function(err, data){
         if(err){
@@ -76,5 +76,6 @@ router.get('/movieHot', function(req, res) {
         }
     });
 });
+
 
 module.exports = router;
