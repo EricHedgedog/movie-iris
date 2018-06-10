@@ -55,7 +55,7 @@ router.post('register', function(req, res, next) {
                 console.log(error);
             } else {
                 console.log('save ok');
-                res.json({ status: 200, message: '注册成功' });
+                res.json({ status: 200, message: '注册成功!' });
             }
         });
         }
